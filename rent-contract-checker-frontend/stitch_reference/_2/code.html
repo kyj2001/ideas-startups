@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#f0f1f2",
+            "on-error": "#ffffff",
+            "surface-bright": "#f8f9fa",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#d9dadb",
+            "background": "#f8f9fa",
+            "surface-tint": "#0053db",
+            "on-tertiary-fixed-variant": "#3f465c",
+            "tertiary-container": "#656d84",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#261a00",
+            "primary-container": "#2563eb",
+            "on-surface-variant": "#434655",
+            "on-secondary": "#ffffff",
+            "surface-container-high": "#e7e8e9",
+            "secondary-fixed": "#ffdf9f",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#191c1d",
+            "on-primary-fixed-variant": "#003ea8",
+            "inverse-surface": "#2e3132",
+            "surface-container": "#edeeef",
+            "on-tertiary-container": "#eef0ff",
+            "on-secondary-container": "#6f5100",
+            "on-primary-fixed": "#00174b",
+            "on-secondary-fixed-variant": "#5c4300",
+            "error-container": "#ffdad6",
+            "secondary-container": "#ffc329",
+            "inverse-primary": "#b4c5ff",
+            "outline": "#737686",
+            "on-surface": "#191c1d",
+            "primary-fixed": "#dbe1ff",
+            "on-primary": "#ffffff",
+            "surface": "#f8f9fa",
+            "tertiary-fixed": "#dae2fd",
+            "tertiary": "#4d556b",
+            "on-primary-container": "#eeefff",
+            "secondary-fixed-dim": "#f9bd22",
+            "outline-variant": "#c3c6d7",
+            "tertiary-fixed-dim": "#bec6e0",
+            "primary": "#004ac6",
+            "surface-container-highest": "#e1e3e4",
+            "secondary": "#795900",
+            "on-tertiary-fixed": "#131b2e",
+            "surface-variant": "#e1e3e4",
+            "surface-container-low": "#f3f4f5",
+            "primary-fixed-dim": "#b4c5ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "card-padding": "24px",
+            "gutter": "24px",
+            "base": "8px",
+            "container-max": "1200px"
+          },
+          "fontFamily": {
+            "headline-lg": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "body-md": ["Manrope"],
+            "label-sm": ["Manrope"],
+            "headline-md": ["Manrope"]
+          },
+          "fontSize": {
+            "headline-lg": ["30px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-sm": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .loading-shimmer {
+      background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .active-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-slate-950/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between px-4 h-16 w-full max-w-[1200px] mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-900 dark:text-white p-2 active:scale-95 transition-transform rounded-full hover:bg-slate-50 dark:hover:bg-slate-900">
+          menu
+        </button>
+<h1 class="font-manrope font-bold text-slate-900 dark:text-white text-lg tracking-tight">전월세 계약서 AI 체크</h1>
+</div>
+<button class="material-symbols-outlined text-slate-900 dark:text-white p-2 active:scale-95 transition-transform rounded-full hover:bg-slate-50 dark:hover:bg-slate-900">
+        account_circle
+      </button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="min-h-screen pt-24 pb-32 flex items-center justify-center px-margin-mobile">
+<div class="w-full max-w-[600px]">
+<!-- Central Analysis Card -->
+<div class="bg-white rounded-3xl p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col items-center text-center">
+<!-- Animated Loader Container -->
+<div class="relative w-32 h-32 mb-8 flex items-center justify-center">
+<!-- Outer Spinning Ring -->
+<div class="absolute inset-0 border-4 border-primary/10 rounded-full"></div>
+<div class="absolute inset-0 border-4 border-primary rounded-full border-t-transparent animate-spin"></div>
+<!-- Inner Icon -->
+<div class="bg-primary-fixed-dim w-20 h-20 rounded-full flex items-center justify-center text-primary active-pulse">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">description</span>
+</div>
+</div>
+<!-- Headline & Description -->
+<div class="space-y-3 mb-10">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">계약서 내용을 분석하고 있습니다.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[400px]">보증금, 월세, 관리비, 특약사항, 질문 리스트를 정리하는 중입니다.</p>
+</div>
+<!-- Progress Steps (Visual Stepper) -->
+<div class="w-full space-y-4 text-left">
+<!-- Step 1: Done -->
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low transition-colors">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex-grow">
+<span class="font-label-sm text-label-sm text-primary">텍스트 읽기</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">완료</span>
+</div>
+<!-- Step 2: Active -->
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-primary-container/10 border-2 border-primary-container transition-colors relative overflow-hidden">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center flex-shrink-0 z-10">
+<span class="material-symbols-outlined text-[20px] animate-pulse">search</span>
+</div>
+<div class="flex-grow z-10">
+<span class="font-label-sm text-label-sm text-primary-container font-bold">핵심 정보 추출</span>
+</div>
+<div class="z-10 flex gap-1">
+<div class="w-1.5 h-1.5 bg-primary-container rounded-full animate-bounce"></div>
+<div class="w-1.5 h-1.5 bg-primary-container rounded-full animate-bounce [animation-delay:0.2s]"></div>
+<div class="w-1.5 h-1.5 bg-primary-container rounded-full animate-bounce [animation-delay:0.4s]"></div>
+</div>
+</div>
+<!-- Step 3: Wait -->
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container transition-colors opacity-60">
+<div class="w-8 h-8 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">priority_high</span>
+</div>
+<div class="flex-grow">
+<span class="font-label-sm text-label-sm text-on-surface-variant">확인 필요 포인트 정리</span>
+</div>
+</div>
+<!-- Step 4: Wait -->
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container transition-colors opacity-60">
+<div class="w-8 h-8 rounded-full bg-outline-variant text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</div>
+<div class="flex-grow">
+<span class="font-label-sm text-label-sm text-on-surface-variant">질문 리스트 생성</span>
+</div>
+</div>
+</div>
+<!-- Loading Prompt Image -->
+<div class="mt-10 w-full h-32 rounded-2xl overflow-hidden relative grayscale opacity-20">
+<img class="w-full h-full object-cover" data-alt="abstract soft geometric patterns with blue and gray tones, clean minimalist aesthetic representing data processing and organization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTVXa12DGVsXCz20vyHWhortS-Qrif0phXVUyJcJbbWnhO6wqAMHTGCanKQCq6rrPj7e1T7r3NQ_tNigYITed30cARPpp2K3YR0En2zpcbkuwJYp51NkSTUfMrma0skGhO9p1WxKcwggHfY_k5dGwFp8F0MBW_dQ4x5WrRF7rFV0PEpEhYELbc_j3jZrhhjrq3ElFTMpDqQw86SOweO7jknTfphx2GwXZTyiU7X6Hx-hbhYgjtTr30jsLFpC0NVr8oRsVfPZqokvy4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
+</div>
+</div>
+<!-- Reassuring Note -->
+<div class="mt-6 flex items-center justify-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-sm text-label-sm">모든 데이터는 암호화되어 안전하게 분석됩니다.</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop as per responsive pivot) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-100 flex justify-around items-center px-4 pt-2 pb-6 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-blue-600 font-bold bg-blue-50/50 rounded-xl px-4 py-1 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="font-manrope text-[11px] font-medium">홈</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-1 active:scale-90 transition-all duration-150 hover:text-blue-500" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-manrope text-[11px] font-medium">분석 내역</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-1 active:scale-90 transition-all duration-150 hover:text-blue-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope text-[11px] font-medium">설정</span>
+</a>
+</nav>
+</body></html>

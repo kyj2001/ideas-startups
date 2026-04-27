@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>계약서 AI 체크 결과</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d9dadb",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#0053db",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "tertiary-container": "#656d84",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#261a00",
+                    "primary-container": "#2563eb",
+                    "on-surface-variant": "#434655",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-fixed": "#ffdf9f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#191c1d",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-surface": "#2e3132",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-container": "#eef0ff",
+                    "on-secondary-container": "#6f5100",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#ffc329",
+                    "inverse-primary": "#b4c5ff",
+                    "outline": "#737686",
+                    "on-surface": "#191c1d",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "tertiary-fixed": "#dae2fd",
+                    "tertiary": "#4d556b",
+                    "on-primary-container": "#eeefff",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "outline-variant": "#c3c6d7",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "primary": "#004ac6",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary": "#795900",
+                    "on-tertiary-fixed": "#131b2e",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-low": "#f3f4f5",
+                    "primary-fixed-dim": "#b4c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "card-padding": "24px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["30px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #f8f9fa; }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .report-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-32">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm fixed top-0 w-full z-50 flex items-center justify-between px-4 h-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600">description</span>
+<h1 class="font-manrope font-bold text-slate-900 text-lg">전월세 계약서 AI 체크</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-50 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-slate-500">share</span>
+</button>
+<button class="p-2 hover:bg-slate-50 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-slate-500">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-4 pt-24 pb-8">
+<!-- Title Section -->
+<div class="mb-8">
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-headline-lg text-headline-lg text-on-background">계약서 AI 체크 결과</h2>
+<span class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-label-sm font-label-sm">분석 완료</span>
+</div>
+<p class="text-slate-500 font-body-md text-body-md">참고 자료입니다.</p>
+</div>
+<!-- Section 1: Summary Card (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+<div class="md:col-span-2 bg-white p-card-padding rounded-xl report-shadow border border-slate-50">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<h3 class="font-headline-md text-headline-md">계약 핵심 요약</h3>
+</div>
+<div class="grid grid-cols-2 gap-y-6 gap-x-8">
+<div>
+<p class="text-slate-400 text-label-sm mb-1">매물 주소</p>
+<p class="font-body-lg text-body-lg font-bold">서울시 강남구 역삼동 825-13</p>
+</div>
+<div>
+<p class="text-slate-400 text-label-sm mb-1">계약 종류</p>
+<p class="font-body-lg text-body-lg font-bold">월세 (아파트)</p>
+</div>
+<div>
+<p class="text-slate-400 text-label-sm mb-1">보증금 / 월세</p>
+<p class="font-body-lg text-body-lg font-bold text-primary">5,000 / 120 만원</p>
+</div>
+<div>
+<p class="text-slate-400 text-label-sm mb-1">관리비</p>
+<p class="font-body-lg text-body-lg font-bold">15 만원</p>
+</div>
+</div>
+</div>
+<div class="bg-primary text-white p-card-padding rounded-xl report-shadow flex flex-col justify-between">
+<div>
+<p class="opacity-80 text-label-sm mb-2">계약 기간</p>
+<p class="font-headline-md text-headline-md mb-4">24개월 (2년)</p>
+<p class="text-body-md opacity-90">2024.06.01 ~ 2026.05.31</p>
+</div>
+<div class="pt-6 border-t border-white/20 mt-6">
+<p class="text-label-sm opacity-80 mb-2">특약 사항</p>
+<p class="text-body-md font-bold">총 8개 항목 분석됨</p>
+</div>
+</div>
+</div>
+<!-- Section 2: Points to Check -->
+<section class="mb-10">
+<h3 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">warning</span>
+                주의 깊게 확인하세요
+            </h3>
+<div class="space-y-4">
+<!-- Warning Card 1 -->
+<div class="bg-white p-6 rounded-xl border-l-4 border-secondary-container report-shadow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-secondary bg-secondary-container/20 px-2 py-1 rounded">관리비</span>
+<h4 class="font-headline-md text-headline-md mt-2">관리비 포함 항목이 불명확합니다.</h4>
+</div>
+<span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">priority_high</span>
+                            꼭 질문 필요
+                        </span>
+</div>
+<div class="space-y-3">
+<div class="flex gap-4">
+<span class="text-slate-400 font-label-sm min-w-[60px]">분석 사유</span>
+<p class="text-body-md">관리비 금액만 명시되어 있고, 수도/인터넷/가스 등 포함되는 세부 항목에 대한 설명이 누락되어 있습니다.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-slate-400 font-label-sm min-w-[60px]">근거 조항</span>
+<p class="text-body-md font-medium text-primary">특약 제4조 참조</p>
+</div>
+</div>
+</div>
+<!-- Warning Card 2 (Safe/Info Style) -->
+<div class="bg-white p-6 rounded-xl border-l-4 border-blue-400 report-shadow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded">수선 의무</span>
+<h4 class="font-headline-md text-headline-md mt-2">수리 비용 부담 주체가 명확합니다.</h4>
+</div>
+<span class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                            안전
+                        </span>
+</div>
+<p class="text-body-md text-slate-600">소모품을 제외한 주요 설비(보일러, 배관 등)에 대한 임대인의 수선 의무가 표준 계약서 수준으로 명시되어 있습니다.</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Questions for Agent & Landlord -->
+<section class="mb-10">
+<h3 class="font-headline-md text-headline-md mb-6">임대인/중개인에게 확인하기</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex justify-between items-center group hover:bg-white transition-colors">
+<div class="flex-1">
+<p class="text-label-sm text-slate-500 mb-1">관리비 관련</p>
+<p class="font-body-md font-bold">"관리비 15만원에 포함되는 세부 항목(수도, 전기, 가스 등)이 무엇인가요?"</p>
+</div>
+<button class="ml-4 p-3 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-primary hover:border-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant flex justify-between items-center group hover:bg-white transition-colors">
+<div class="flex-1">
+<p class="text-label-sm text-slate-500 mb-1">옵션 수리 관련</p>
+<p class="font-body-md font-bold">"에어컨이나 냉장고가 고장 났을 때 수리 비용 부담은 어떻게 되나요?"</p>
+</div>
+<button class="ml-4 p-3 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-primary hover:border-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 4: Checklist -->
+<section class="mb-10 bg-white p-card-padding rounded-xl report-shadow">
+<h3 class="font-headline-md text-headline-md mb-6">계약 전 필수 체크리스트</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-4 p-4 rounded-lg border border-slate-100 hover:bg-slate-50 transition-colors cursor-pointer">
+<input class="w-6 h-6 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div>
+<p class="font-body-md font-bold">등기부등본 확인</p>
+<p class="text-label-sm text-slate-500">당일 발급된 등본의 근저당권 확인 (말소 조건 여부)</p>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-lg border border-slate-100 hover:bg-slate-50 transition-colors cursor-pointer">
+<input class="w-6 h-6 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div>
+<p class="font-body-md font-bold">임대인 신분증 및 명의 확인</p>
+<p class="text-label-sm text-slate-500">실제 소유주와 계약자가 일치하는지 신분증 대조</p>
+</div>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-lg border border-slate-100 hover:bg-slate-50 transition-colors cursor-pointer">
+<input class="w-6 h-6 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<div>
+<p class="font-body-md font-bold">미납 국세/지방세 완납 증명서</p>
+<p class="text-label-sm text-slate-500">임대인의 세금 체납 여부 확인 (최우선변제금 보호를 위해 필요)</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Section 5: Warning Box -->
+<div class="bg-amber-50 border border-amber-200 p-6 rounded-xl flex gap-4">
+<span class="material-symbols-outlined text-amber-600 shrink-0">gavel</span>
+<div>
+<p class="text-amber-800 font-bold mb-1">법적 고지사항</p>
+<p class="text-amber-700 text-label-sm leading-relaxed">
+                    본 AI 분석 결과는 계약서 텍스트를 기반으로 한 단순 참고용 서비스이며, 실제 법적 효력을 갖는 자문이 아닙니다. 정확한 법률 판단을 위해서는 반드시 변호사, 법무사 등 전문가와 상의하시기 바랍니다.
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center px-4 pt-2 pb-6 z-50 rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-blue-500 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-manrope text-[11px] font-medium mt-1">홈</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-4 py-1 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-manrope text-[11px] font-medium mt-1">분석 내역</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-blue-500 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope text-[11px] font-medium mt-1">설정</span>
+</a>
+</nav>
+</body></html>
