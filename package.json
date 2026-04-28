@@ -1,0 +1,13 @@
+{
+  "name": "idea-and-startup",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:all": "powershell -ExecutionPolicy Bypass -File scripts/dev-all.ps1",
+    "dev": "npm --prefix server run dev",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix rent-contract-checker-frontend/client run dev",
+    "start": "npm --prefix server start",
+    "build": "npm --prefix rent-contract-checker-frontend/client run build"
+  }
+}
