@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #0061a4;
+  --color-primary-container: #2196f3;
+  --color-on-primary: #ffffff;
+  --color-secondary-container: #d3e2ed;
+  --color-surface: #f8f9ff;
+  --color-surface-container: #ebeef6;
+  --color-surface-container-lowest: #ffffff;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-slate-900 font-sans antialiased;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: #000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-avoid-pagebreak {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .print-wide {
+    width: 100% !important;
+  }
+}
+
+.ambient-shadow {
+  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.08);
+}
+
+.hover-lift {
+  @apply transition-all duration-200;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-0.5 shadow-lg shadow-blue-900/5;
+}
